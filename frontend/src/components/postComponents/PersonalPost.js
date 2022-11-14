@@ -39,11 +39,11 @@ return (
           </div>
         <p>{post.description}</p>
       </div>
-      <Button onClick={handleOnSubmit}>
+      <Button >
           <DeleteIcon/>
       </Button>
       <div className={classes.actions}>
-      <Button>Chat</Button>
+     
       <p variant="body2">{moment(post.createdAt).fromNow()}</p>
      
       </div>

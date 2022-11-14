@@ -71,42 +71,47 @@ const Login = () => {
   };
 
   return (
-    <VStack spacing="10px">
-      <FormControl id="username" isRequired>
-        <FormLabel>username</FormLabel>
+    // <VStack spacing="10px">
+    <>
+      {/* <FormControl id="username" isRequired> */}
+
+        <label>username</label>
         <Input
           value={username}
           // type="email"
           placeholder="username"
           onChange={(e) => setUsername(e.target.value)}
         />
-      </FormControl>
-      <FormControl id="password" isRequired>
-        <FormLabel>Password</FormLabel>
-        <InputGroup size="md">
+      {/* </FormControl> */}
+      {/* <FormControl id="password" isRequired> */}
+        {/* <FormLabel>Password</FormLabel> */}
+        <label>Password</label>
+        {/* <InputGroup size="md"> */}
           <Input
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             type={show ? "text" : "password"}
             placeholder="Enter password"
           />
-          <InputRightElement width="4.5rem">
-            <Button h="1.75rem" size="sm" onClick={handleClick}>
+          {/* <InputRightElement width="4.5rem"> */}
+            {/* <Button 
+            // h="1.75rem" size="sm" 
+            onClick={handleClick}>
               {show ? "Hide" : "Show"}
-            </Button>
-          </InputRightElement>
-        </InputGroup>
-      </FormControl>
+            </Button> */}
+          {/* </InputRightElement> */}
+        {/* </InputGroup> */}
+      {/* </FormControl> */}
       <Button
-        colorScheme="blue"
-        width="100%"
-        style={{ marginTop: 15 }}
+        // colorScheme="blue"
+        // width="100%"
+        // style={{ marginTop: 15 }}
         onClick={submitHandler}
         isLoading={loading}
       >
         Login
       </Button>
-      <Button
+      {/* <Button
         variant="solid"
         colorScheme="red"
         width="100%"
@@ -116,8 +121,9 @@ const Login = () => {
         }}
       >
         Get Guest User Credentials
-      </Button>
-    </VStack>
+      </Button> */}
+    {/* </VStack> */}
+    </>
   );
 };
 

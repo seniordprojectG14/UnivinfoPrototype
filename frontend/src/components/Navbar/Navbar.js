@@ -58,7 +58,7 @@ const stringifiedPerson = localStorage.getItem("name");
 const personAsObjectAgain = JSON.parse(stringifiedPerson);
 
   return (
-    <header className={classes.header}>
+    <header >
       <div className={classes.logo}>univinfo</div>
       <nav>
         <ul>
@@ -71,9 +71,9 @@ const personAsObjectAgain = JSON.parse(stringifiedPerson);
           <li>
             <Link to="/MyPost">My Post</Link>
           </li>
-          <li>
+          {/* <li>
             <Link to="/Chats">Chat</Link>
-          </li>
+          </li> */}
           <li>
             <Link to="/Map">Map</Link>
           </li>
