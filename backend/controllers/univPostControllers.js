@@ -73,43 +73,20 @@ module.exports.createPost = async (req, res) => {
         if (err)
           return res.status(400).json({ success: false, message: err.message });
     try {
-        let fileArray = req.files,
-					fileLocation;
+      
         
         const address = req.body.address
         const description = req.body.description
         const username = req.body.username
-        const galleryImgLocationArray = [];
-				for ( let i = 0; i < fileArray?.length; i++ ) {
-					fileLocation = fileArray[ i ].location;
-					galleryImgLocationArray.push( fileLocation )
-				}
-
-  Geocode.setLanguage("en");
-  Geocode.setApiKey("AIzaSyBBoDTa2K0ql0d3ssnlMEYXdBvQLI6_LqA");
-  Geocode.fromAddress(address).then(
-    async (response) => {
-      const { lat, lng } = response.results[0].geometry.location;
-    },
-    (error) => {
-      console.error(error);
-    }
-  );
-  
-
-
-
+        
         await Postmodel.create({
-            photos: galleryImgLocationArray, 
             address: address,
             description: description,
             username: username,
-            latL: lat,
-            lngL: lng,
         });
 
     } catch (error) {
-      //  res.status(409).json({data: data});
+      res.status(409).json({data: data});
     }
 });
 };

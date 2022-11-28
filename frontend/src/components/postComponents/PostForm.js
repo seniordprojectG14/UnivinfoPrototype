@@ -50,14 +50,11 @@ const PostForm = ({ currentId, setCurrentId, user, setUser}) => {
 
       
          const formdata = new FormData();
-        
-         for ( let i = 0; i < image?.length; i++ ) {
-          formdata.append( "imagecropped", image[ i ], image[ i ].name );
-        }
-        console.log(JSON.stringify(image) + "formdata pics");
-        formdata.append("len", image?.length);
-        formdata.append("address", postData.address)
-        formdata.append("description", postData.description)
+        console.log(JSON.stringify(postData.address) + "postData.address");
+        console.log(JSON.stringify(postData.description) + "postData.description");
+        console.log(JSON.stringify(user?.username) + "user?.username");
+        formdata.append("address", postData?.address)
+        formdata.append("description", postData?.description)
         formdata.append("username", user?.username)
          const {data} = await axios.post("/posts", formdata, { headers: {
 					'accept': 'application/json',

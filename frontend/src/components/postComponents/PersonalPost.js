@@ -30,22 +30,17 @@ return (
   <li className={classes.item}>
     <Card>
       <div className={classes.content}>
-        <h3>{post.title}</h3>
+      
         <div className={classstyles.details}>
-      <Typography variant="body2" color="textSecondary" component="h2">{post.max}</Typography>
-      <Typography variant="body2" color="textSecondary" component="h2">{post.max}</Typography>
-      <Typography variant="body2" color="textSecondary" component="h2">{post.min}</Typography>
-      <Typography variant="body2" color="textSecondary" component="h2">{post.wanttolive}</Typography>
           </div>
         <p>{post.description}</p>
       </div>
-      <Button >
+      <Button onClick={handleOnSubmit}>
           <DeleteIcon/>
       </Button>
       <div className={classes.actions}>
-     
+      <Button>Chat</Button>
       <p variant="body2">{moment(post.createdAt).fromNow()}</p>
-     
       </div>
     </Card>
   </li>
@@ -53,4 +48,5 @@ return (
 }
 
 export default PersonalPost;
+
 
